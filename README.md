@@ -1,12 +1,16 @@
-# e-Pass :rocket:
+# e-Pass
 
 Aplicativo desenvolvido para melhorar a forma de pagamento dentro dos onibus
 
-### 🤖 Tecnologias usadas
+## 🤖 Tecnologias usadas
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Knex](http://knexjs.org/)
+- [SQLite](https://www.sqlite.org/index.html)
+- [React Native](https://facebook.github.io/react-native/)
 - [Expo](https://expo.io/)
 
 Extras:
@@ -15,6 +19,11 @@ Extras:
   - [EditorConfig](https://editorconfig.org/)
   - [ESLint](https://eslint.org/)
   - [Prettier](https://prettier.io/)
+
+## 💻 Projeto
+
+   ><p style="margin-left:5em">🏭  &nbsp;&nbsp;&nbsp;&nbsp;./server - API REST usando TypeScript, Express e banco de dados SQLite </p>
+   ><p style="margin-left:5em">📱 &nbsp;&nbsp;&nbsp;&nbsp;./mobile - Interface mobile em ReactNative, TypeScript e Expo </p>
 
 ### ⚙ Como rodar este projeto
 
@@ -28,14 +37,23 @@ E também será preciso um editor, eu indico o <b>[VSCode](https://code.visualst
 
 ### 🧭 Rodando o Projeto
 
-```bash
-# Clone este repositório
-$ git clone https://github.com/pedroduca/ePass
-
-# Instale as dependências
-$ npm install ou yarn add
-
-# Execute a aplicação
-$ expo start
-
 ```
+# Clone o repositório
+$ git clone https://github.com/rosooares/nextlevelweek
+
+# Acesse a pasta server e faça as instalações:
+$ cd server/
+
+# Instale as dependencias
+$ npm install
+
+# Execute as migrations
+$ npm knex:migrate
+
+# Execute os seeds
+$ npm knex:seed
+
+# Rode a API
+$ npm dev
+```
+

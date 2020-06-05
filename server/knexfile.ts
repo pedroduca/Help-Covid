@@ -8,5 +8,8 @@ module.exports = {
     migrations: {
         directory: path.resolve(__dirname, 'src', 'data', 'migrations')
     },
-    useNullAsDefault: true
+    seeds: {
+        directory: path.resolve(__dirname, 'src', 'data', 'seeds')
+    },
+    useNullAsDefault: true,
 };

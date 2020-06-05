@@ -4,8 +4,8 @@ export async function up(knex: Knex) {
   // Criar a tabela
   return knex.schema.createTable('itensColeta', table => {
     table.increments('id').primary();
-    table.string('imagem').notNullable();
     table.string('titulo').notNullable();
+    table.string('imagem').notNullable();
   });
 }
 

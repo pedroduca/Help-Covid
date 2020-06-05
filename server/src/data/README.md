@@ -5,7 +5,6 @@
   - nome
   - email
   - telefone
-  - endereço
   - cidade
   - UF
   - latitude (dados coletado do mapa)

@@ -47,11 +47,11 @@ $ cd server/
 # Instale as dependencias
 $ npm install
 
-# Execute as migrations
-$ npm knex:migrate
+# Execute as migrations para criar as tabelas do banco
+$ npm run knex-migrate 
 
-# Execute os seeds
-$ npm knex:seed
+# Execute os seeds para prencher a tabela itens
+$ npm run knex:seed 
 
 # Rode a API
 $ npm dev

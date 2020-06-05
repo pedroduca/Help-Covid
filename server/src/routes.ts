@@ -1,64 +1,21 @@
 import express from 'express';
-import knex from './data/connection';
+
+
+import LocalController from './controllers/LocalController';
+import ItensController from './controllers/ItensController';
 
 const routes = express.Router();
+const localController = new LocalController();
+const itensController = new ItensController();
+
 
 // Listagem dos itens
-routes.get('/itens', async(request, response) => {
-    const itens = await knex('itensColeta').select('*');
-
-    const itemFormatado = itens.map(item => {
-        return {
-            id : item.id,
-            title : item.titulo,
-            image_url: `http://localhost:3333/temp/${item.imagem}`
-        };
-    });
-
-    return response.json(itemFormatado);
-});
+routes.get('/itens', itensController.index);
 
 // Post dos pontos de coleta
-routes.post('/pontos', async (request,response) => {
-// Obs.: Isso é a mesma coisa que fazer const nome = request.body;
-    const {
-        nome,
-        email,
-        telefone,
-        endereco,
-        cidade,
-        uf,
-        latitude,
-        longitude,
-        itens
-    } = request.body;
-    // Charles, aqui estou trabalhando com short syntax que quando o nome da váriavel é o mesmo nome do objeto
-    // podemos omitir o nome da váriavel, exemplo nome : nome
-    const setIds = await knex('localColeta').insert({
-        imagem: 'nada',
-        nome,
-        email,
-        telefone,
-        endereco,
-        cidade,
-        uf,
-        latitude,
-        longitude,
-    });
+routes.post('/pontos', localController.create);
+routes.get('/pontos/:id', localController.show);
+routes.get('/pontos', localController.index);
 
-    const localColetas = setIds[0];
-
-    const localItens = itens.map( (item_id : number)=> {
-        return {
-            item_id,
-            local_id: localColetas
-        };
-    })
-
-    await knex('localColeta_itensColeta').insert(localItens);
-
-    return response.json({sucess : true});
-
-});
 
 export default routes;

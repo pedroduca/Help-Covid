@@ -25,7 +25,6 @@ const Points = () => {
   return (
     <>
       <View style={styles.container}>
-        
         <TouchableOpacity onPress={voltar}>
           <Icon name="arrow-left" size={20} color="#ff8c00" />
         </TouchableOpacity>
@@ -34,60 +33,118 @@ const Points = () => {
         <Text style={styles.description}> Encontre seu ponto de coleta.</Text>
 
         <View style={styles.mapContainer}>
-          <MapView style={styles.map} initialRegion={{
-           latitude: -27.5709355,
-           longitude: -48.6288651,
-           latitudeDelta:0.014,
-           longitudeDelta:0.014,
-          }}>
-            <Marker coordinate={{
-               latitude: -27.5709355,
-               longitude: -48.6288651,
-               }} />
-            </MapView>
+          <MapView
+            style={styles.map}
+            initialRegion={{
+              latitude: -27.5709355,
+              longitude: -48.6288651,
+              latitudeDelta: 0.014,
+              longitudeDelta: 0.014,
+            }}
+          >
+            <Marker
+              coordinate={{
+                latitude: -27.5709355,
+                longitude: -48.6288651,
+              }}
+            />
+          </MapView>
         </View>
       </View>
       <View style={styles.itemsContainer}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingHorizontal: 20 }}
+        >
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/borracha.svg"
+            />
+            <Text style={styles.itemTitle}> Borracha</Text>
+          </TouchableOpacity>
 
-      <ScrollView 
-      horizontal
-       showsHorizontalScrollIndicator={false}
-       contentContainerStyle={{paddingHorizontal:20}}>
-        <TouchableOpacity style={styles.item} onPress={() => {}}>
-          <SvgUri width={42} height={42} uri="http://192.168.0.29:3333/temp/plastico.png" />
-          <Text style={styles.itemTitle}> Madeira</Text>        
-          
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/eletrodomesticos.svg"
+            />
+            <Text style={styles.itemTitle}> Eletrodomesticos</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.item} onPress={() => {}}>
-          <SvgUri width={42} height={42} uri="http://192.168.0.29:3333/temp/plastico.png" />
-          <Text style={styles.itemTitle}> Madeira</Text>        
-          
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/eletronicos.svg"
+            />
+            <Text style={styles.itemTitle}> Eletronicos</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.item} onPress={() => {}}>
-          <SvgUri width={42} height={42} uri="http://192.168.0.29:3333/temp/plastico.png" />
-          <Text style={styles.itemTitle}> Madeira</Text>        
-          
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/entulho.svg"
+            />
+            <Text style={styles.itemTitle}> Entulho</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/madeira.svg"
+            />
+            <Text style={styles.itemTitle}> Madeira</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.item} onPress={() => {}}>
-          <SvgUri width={42} height={42} uri="http://192.168.0.29:3333/temp/plastico.png" />
-          <Text style={styles.itemTitle}> Madeira</Text>        
-          
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.item} onPress={() => {}}>
-          <SvgUri width={42} height={42} uri="http://192.168.0.29:3333/temp/plastico.png" />
-          <Text style={styles.itemTitle}> Madeira</Text>        
-          
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/metal.svg"
+            />
+            <Text style={styles.itemTitle}> Metal</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.item} onPress={() => {}}>
-          <SvgUri width={42} height={42} uri="http://192.168.0.29:3333/temp/plastico.png" />
-          <Text style={styles.itemTitle}> Madeira</Text>        
-          
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/moveis.svg"
+            />
+            <Text style={styles.itemTitle}> Moveis</Text>
+          </TouchableOpacity>
 
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/papel.svg"
+            />
+            <Text style={styles.itemTitle}> Papel</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/plastico.svg"
+            />
+            <Text style={styles.itemTitle}> Plastico</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri="http://192.168.0.29:3333/temp/vidro.svg"
+            />
+            <Text style={styles.itemTitle}> Vidro</Text>
+          </TouchableOpacity>
         </ScrollView>
       </View>
     </>

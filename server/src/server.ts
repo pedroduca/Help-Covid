@@ -11,4 +11,6 @@ app.use(routes);
 
 app.use("/temp", express.static(path.resolve(__dirname, "..", "temp")));
 
-app.listen(3333);
+app.listen(3333, () => {
+  console.log("Subiu o servidor, pode dale!");
+});

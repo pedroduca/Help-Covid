@@ -125,7 +125,7 @@ const Points = () => {
               height={42}
               uri="http://192.168.0.29:3333/temp/papel.svg"
             />
-            <Text style={styles.itemTitle}> Papel</Text>
+            <Text style={styles.itemTitle}> Papeis</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.item} onPress={() => {}}>

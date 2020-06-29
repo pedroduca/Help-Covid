@@ -2,21 +2,21 @@ import Knex from 'knex';
 
 // Cria tabela
 export async function up(knex: Knex) {
-    return knex.schema.createTable('localColeta', table => {
-        table.increments('id').primary();
-        table.string('imagem').notNullable();
-        table.string('nome').notNullable();
-        table.string('email').notNullable();
-        table.string('telefone').notNullable();
-        table.string('endereco').notNullable();
-        table.string('cidade').notNullable();
-        table.string('UF', 2).notNullable();
-        table.decimal('latitude').notNullable();
-        table.decimal('longitude').notNullable();
-    });
+  return knex.schema.createTable('localColeta', (table) => {
+    table.increments('id').primary();
+    table.string('imagem').notNullable();
+    table.string('nome').notNullable();
+    table.string('email').notNullable();
+    table.string('telefone').notNullable();
+    table.string('endereco').notNullable();
+    table.string('cidade').notNullable();
+    table.string('UF', 2).notNullable();
+    table.decimal('latitude').notNullable();
+    table.decimal('longitude').notNullable();
+  });
 }
 
 // Apaga tabela
 export async function down(knex: Knex) {
-    return knex.schema.dropTable('localColeta');
+  return knex.schema.dropTable('localColeta');
 }

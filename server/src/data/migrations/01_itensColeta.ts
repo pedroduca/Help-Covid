@@ -2,7 +2,7 @@ import Knex from 'knex';
 
 export async function up(knex: Knex) {
   // Criar a tabela
-  return knex.schema.createTable('itensColeta', table => {
+  return knex.schema.createTable('itensColeta', (table) => {
     table.increments('id').primary();
     table.string('titulo').notNullable();
     table.string('imagem').notNullable();

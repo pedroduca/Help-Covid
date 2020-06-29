@@ -1,26 +1,25 @@
-import React from "react";
-import {Feather as Icon} from "@expo/vector-icons"
-import { View, Image, StyleSheet, Text, ImageBackground } from "react-native";
-import { RectButton } from "react-native-gesture-handler";
-import{useNavigation} from '@react-navigation/native'
+import React from 'react';
+import { Feather as Icon } from '@expo/vector-icons';
+import { View, Image, StyleSheet, Text, ImageBackground } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 //import logo from '../../assets/logo.png'
 
 const Home = () => {
   const navigation = useNavigation();
 
-  function irParaMapa () {
-    return navigation.navigate('Points')
-
+  function irParaMapa() {
+    return navigation.navigate('Points');
   }
   return (
     <ImageBackground
-      source={require("../../assets/logo.png")}
+      source={require('../../assets/logo.png')}
       style={styles.container}
       imageStyle={{ width: 274, height: 368 }}
     >
       <View style={styles.main}>
-        <Image source={require("../../assets/logo.png")} />
+        <Image source={require('../../assets/logo.png')} />
         <Text style={styles.title}>Seu Marketplace de coleta paradescarte</Text>
         <Text style={styles.description}>
           Ajudando pessoas a descartarem seu lixo de forma inteligente.
@@ -31,8 +30,8 @@ const Home = () => {
         <RectButton style={styles.button} onPress={irParaMapa}>
           <View style={styles.buttonIcon}>
             <Text>
-            <Icon name ="arrow-right" color="#FFF" size={24}/>
-            </Text>           
+              <Icon name="arrow-right" color="#FFF" size={24} />
+            </Text>
           </View>
           <Text style={styles.buttonText}>Entrar</Text>
         </RectButton>
@@ -49,22 +48,22 @@ const styles = StyleSheet.create({
 
   main: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
 
   title: {
-    color: "#322153",
+    color: '#322153',
     fontSize: 32,
-    fontFamily: "Ubuntu_700Bold",
+    fontFamily: 'Ubuntu_700Bold',
     maxWidth: 260,
     marginTop: 64,
   },
 
   description: {
-    color: "#6C6C80",
+    color: '#6C6C80',
     fontSize: 16,
     marginTop: 16,
-    fontFamily: "Roboto_400Regular",
+    fontFamily: 'Roboto_400Regular',
     maxWidth: 260,
     lineHeight: 24,
   },
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
 
   input: {
     height: 60,
-    backgroundColor: "#FFF",
+    backgroundColor: '#FFF',
     borderRadius: 10,
     marginBottom: 8,
     paddingHorizontal: 24,
@@ -83,29 +82,29 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: "#ff8c00",
+    backgroundColor: '#ff8c00',
     height: 60,
-    flexDirection: "row",
+    flexDirection: 'row',
     borderRadius: 10,
-    overflow: "hidden",
-    alignItems: "center",
+    overflow: 'hidden',
+    alignItems: 'center',
     marginTop: 8,
   },
 
   buttonIcon: {
     height: 60,
     width: 60,
-    backgroundColor: "rgba(0, 0, 0, 0.1)",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   buttonText: {
     flex: 1,
-    justifyContent: "center",
-    textAlign: "center",
-    color: "#FFF",
-    fontFamily: "Roboto_500Medium",
+    justifyContent: 'center',
+    textAlign: 'center',
+    color: '#FFF',
+    fontFamily: 'Roboto_500Medium',
     fontSize: 16,
   },
 });

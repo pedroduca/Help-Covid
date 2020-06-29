@@ -1,18 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
-import { View, Image, StyleSheet, Text, ImageBackground } from 'react-native';
+import { View, Image, StyleSheet, Text, ImageBackground, TextInput, KeyboardAvoidingView, Platform} from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 //import logo from '../../assets/logo.png'
 
 const Home = () => {
+  const [uf, setUf] = useState('');
+  const [city, setCity] = useState('');
   const navigation = useNavigation();
 
   function irParaMapa() {
-    return navigation.navigate('Points');
+    return navigation.navigate('Points',
+     {uf
+    ,city,
+  });
   }
   return (
+
+    <KeyboardAvoidingView style={{flex: 1}} 
+    behavior={Platform.OS === 'ios' ? 'padding' : undefined }>
+
     <ImageBackground
       source={require('../../assets/logo.png')}
       style={styles.container}
@@ -20,13 +29,32 @@ const Home = () => {
     >
       <View style={styles.main}>
         <Image source={require('../../assets/logo.png')} />
+        <View>
         <Text style={styles.title}>Seu Marketplace de coleta paradescarte</Text>
         <Text style={styles.description}>
           Ajudando pessoas a descartarem seu lixo de forma inteligente.
         </Text>
+        </View>
       </View>
 
       <View style={styles.footer}>
+      <TextInput style={styles.input}
+      placeholder="Digite a UF"
+      value={uf}
+      maxLength={2}
+      autoCapitalize="characters"
+      autoCorrect={false}
+      onChangeText={setUf}
+      />
+
+      <TextInput style={styles.input}
+      placeholder="Digite a Cidade"
+      value={city}
+      autoCorrect={false}
+      onChangeText={setCity}
+      />
+
+        
         <RectButton style={styles.button} onPress={irParaMapa}>
           <View style={styles.buttonIcon}>
             <Text>
@@ -37,6 +65,8 @@ const Home = () => {
         </RectButton>
       </View>
     </ImageBackground>
+    </KeyboardAvoidingView>
+
   );
 };
 

@@ -21,7 +21,14 @@ class LocalController {
       .distinct()
       .select('local.*');
 
-    return response.json(local);
+    const locaisFormatado = local.map((locais) => {
+      return {
+        ...locais,
+        image_url: `http://192.168.1.12:3333/uploads/${locais.image}`,
+      };
+    });
+
+    return response.json(locaisFormatado);
   }
 
   // fim da rota

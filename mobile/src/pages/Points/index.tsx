@@ -119,14 +119,14 @@ const Points = () => {
                 longitudeDelta: 0.014,
               }}
             >
-              {points.map((point) => (
+              {points.map((pontos) => (
                 <Marker
-                  key={String(point.id)}
+                  key={String(pontos.id)}
                   style={styles.mapMarker}
-                  onPress={() => detalhes(point.id)}
+                  onPress={() => detalhes(pontos.id)}
                   coordinate={{
-                    latitude: point.latitude,
-                    longitude: point.longitude,
+                    latitude: pontos.latitude,
+                    longitude: pontos.longitude,
                   }}
                 >
                   <View style={styles.mapMarkerContainer}>

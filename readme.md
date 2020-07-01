@@ -22,8 +22,9 @@ Extras:
 
 ## 💻 Projeto
 
-   ><p style="margin-left:5em">🏭  &nbsp;&nbsp;&nbsp;&nbsp;./server - API REST usando TypeScript, Express e banco de dados SQLite </p>
-   ><p style="margin-left:5em">📱 &nbsp;&nbsp;&nbsp;&nbsp;./mobile - Interface mobile em ReactNative, TypeScript e Expo </p>
+> <p style="margin-left:5em">🏭  &nbsp;&nbsp;&nbsp;&nbsp;./server - API REST usando TypeScript, Express e banco de dados SQLite </p>
+> <p style="margin-left:5em">📱 &nbsp;&nbsp;&nbsp;&nbsp;./mobile - Interface mobile em ReactNative, TypeScript e Expo </p>
+
 ### ⚙ Como rodar este projeto
 
 ### Pré-requisitos
@@ -47,10 +48,10 @@ $ cd server/
 $ npm install
 
 # Execute as migrations para criar as tabelas do banco
-$ npm run knex-migrate 
+$ npm run knex-migrate
 
 # Execute os seeds para prencher a tabela itens
-$ npm run knex-seed 
+$ npm run knex-seed
 
 # Rode a API
 $ npm dev
@@ -61,3 +62,9 @@ $ cd ecolixo-mobile
 # Instale as dependencias
 $ npm install
 ```
+
+### Pendencias
+
+- [ ] Colocar as logos
+- [ ] Arrumar erro de fontes no IOS
+- [ ] Corrigir as imagens em png

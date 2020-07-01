@@ -54,12 +54,15 @@ $ npm run knex-migrate
 $ npm run knex-seed
 
 # Rode a API
-$ npm dev
+$ npm run dev
 
 # Agora acessa a pasta ecolixo-mobile
 $ cd ecolixo-mobile
 
 # Instale as dependencias
+$ npm install
+
+# Rode o aplicativo
 $ npm install
 ```
 

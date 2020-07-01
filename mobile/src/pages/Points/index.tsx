@@ -66,7 +66,7 @@ const Points = () => {
 
   useEffect(() => {
     api
-      .get('pontos', {
+      .get('points', {
         params: {
           city: routeParams.city,
           uf: routeParams.uf,
@@ -82,8 +82,8 @@ const Points = () => {
     navigation.goBack();
   }
 
-  function detalhes() {
-    navigation.navigate('Detail');
+  function detalhes(id: number) {
+    navigation.navigate('Detail', { point_id: id });
   }
 
   function SelecaoItem(id: number) {
@@ -119,14 +119,14 @@ const Points = () => {
                 longitudeDelta: 0.014,
               }}
             >
-              {points.map((pontos) => (
+              {points.map((point) => (
                 <Marker
-                  key={String(pontos.id)}
+                  key={String(point.id)}
                   style={styles.mapMarker}
-                  onPress={() => detalhes(pontos.id)}
+                  onPress={() => detalhes(point.id)}
                   coordinate={{
-                    latitude: pontos.latitude,
-                    longitude: pontos.longitude,
+                    latitude: point.latitude,
+                    longitude: point.longitude,
                   }}
                 >
                   <View style={styles.mapMarkerContainer}>
@@ -161,8 +161,6 @@ const Points = () => {
     </>
   );
 };
-
-export default Points;
 
 const styles = StyleSheet.create({
   container: {
@@ -260,3 +258,5 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
 });
+
+export default Points;

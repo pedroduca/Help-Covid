@@ -42,7 +42,7 @@ const Detail = () => {
   const routeParams = route.params as Params;
 
   useEffect(() => {
-    api.get(`points/${routeParams.point_id}`).then((response) => {
+    api.get(`pontos/${routeParams.point_id}`).then((response) => {
       setData(response.data);
     });
   }, []);
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     marginTop: 8,
-    color: '6C6C80',
+    color: '#6C6C80',
   },
 
   address: {

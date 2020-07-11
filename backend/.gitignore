@@ -1,0 +1,6 @@
+# Database
+*.sqlite
+
+# Folders
+uploads/points/*
+!.gitKeep

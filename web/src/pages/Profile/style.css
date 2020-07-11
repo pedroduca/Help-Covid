@@ -1,0 +1,126 @@
+#page-profile .content {
+  width    : 100%;
+  height   : 100%;
+  max-width: 1100px;
+  margin   : 0 auto;
+  padding  : 0 35px;
+
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+}
+
+#page-profile .content header {
+  width: 100%;
+  margin     : 48px 0 0;
+  display    : flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#page-profile .content header h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.btn {
+  height: 50px;
+  padding: 0 20px;
+}
+
+#page-profile .content main {
+  margin: 70px 0;
+}
+
+#page-profile .content main p.points-length {
+  margin-bottom: 40px;
+  padding  : 0 35px;
+}
+
+#page-profile .content main div.points-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  margin-bottom: 20px;
+  max-width: 1100px;
+  margin   : 0 auto;
+  padding  : 0 35px;
+}
+
+#page-profile .content main div.points{
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+#page-profile .content main div.points .point-edit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+}
+
+#page-profile .content main div.points .point-edit svg {
+  color: #FFF;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: color 0.2s;
+}
+
+#page-profile .content main div.points .point-edit svg:hover,
+#page-profile .content main div.points .point-edit svg:active {
+  color: rgb(231, 71, 71);
+}
+
+#page-profile .content main div.points .point-img {
+  height: 150px;
+  overflow: hidden;
+  background-color: rgb(24, 23, 23);
+  user-select: none;
+  outline: none;
+}
+
+#page-profile .content main div.points .point-img img {
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}
+
+#page-profile .content main div.points .point-content {
+  padding: 20px 30px;
+}
+
+#page-profile .content main div.points .point-content h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+
+  /* Color 3 pontos no final de um titulo for muito grande */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+#page-profile .content main div.points .point-content p {
+  color: var(--text-color);
+}
+
+@media (max-width: 1100px) {
+  #page-profile .content main div.points-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  #page-profile .content header h1 {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  #page-profile .content main div.points-container {
+    grid-template-columns: 1fr;
+  }
+}
